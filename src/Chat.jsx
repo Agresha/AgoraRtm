@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import AgoraRTM from "agora-rtm-sdk";
 import { MessageSquare, Send, LogIn, LogOut, User, Users, MessageCircle,Loader2,Bell,Shield,CheckCircle,XCircle} from "lucide-react";
 
@@ -18,10 +18,6 @@ export default function App() {
   const [showNotification, setShowNotification] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState("");
 
-  // Auto-scroll to bottom of messages
-  useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
 
   // Show notification
   const showNotificationMessage = (message, duration = 3000) => {
